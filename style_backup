@@ -1,0 +1,87 @@
+var error_student_marks = '';
+
+  if($.trim($('#student_marks').val()).length == 0)
+  {
+   error_student_marks = 'student marks is required';
+   $('#error_student_marks').text(error_student_marks);
+   $('#student_marks').addClass('has-error');
+  }
+  else
+  {
+   error_student_marks = '';
+   $('#error_student_marks').text(error_student_marks);
+   $('#student_marks').removeClass('has-error');
+  }
+  
+  if($.trim($('#mobile_no').val()).length == 0)
+  {
+   error_mobile_no = 'Mobile Number is required';
+   $('#error_mobile_no').text(error_mobile_no);
+   $('#mobile_no').addClass('has-error');
+  }
+  else
+  {
+   if (!mobile_validation.test($('#mobile_no').val()))
+   {
+    error_mobile_no = 'Invalid Mobile Number';
+    $('#error_mobile_no').text(error_mobile_no);
+    $('#mobile_no').addClass('has-error');
+   }
+   else
+   {
+    error_mobile_no = '';
+    $('#error_mobile_no').text(error_mobile_no);
+    $('#mobile_no').removeClass('has-error');
+   }
+  }
+  if(error_address != '' || error_mobile_no != '')
+  {
+   return false;
+  }
+  else
+
+
+
+
+
+
+
+
+  <?php
+
+$connect = new PDO("mysql:host=localhost;dbname=results", "root", "");
+$message = '';
+if(isset($_POST["semester"]))
+{
+ sleep(5);
+ $query = "
+ INSERT INTO tbl_login 
+ (student_name, college_name, symbol_number, registration_number) VALUES 
+ (:student_name, :college_name, :symbol_number, registration_number)
+ ";
+ $user_data = array(
+  ':student_name'  => $_POST["student_name"],
+  ':college_name'  => $_POST["college_name"],
+  ':symbol_number'   => $_POST["symbol_number"],
+  ':registration_number'   => $_POST["registration_number"]
+  
+ );
+ $statement = $connect->prepare($query);
+ if($statement->execute($user_data))
+ {
+  $message = '
+  <div class="alert alert-success">
+  Registration Completed Successfully
+  </div>
+  ';
+ }
+ else
+ {
+  $message = '
+  <div class="alert alert-success">
+  There is an error in Registration
+  </div>
+  ';
+ }
+}
+?>
