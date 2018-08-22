@@ -26,7 +26,7 @@
 					$allowedExtension = array('csv');
 					if (!in_array($fileExtension, $allowedExtension)) {
 						
-						$_SESSION['error'] = "invalid file extension.";
+						$_SESSION['error'] = "Invalid file extension.";
 						header('location:upload_result.php');
 						exit();
 					}else{

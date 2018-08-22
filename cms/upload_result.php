@@ -1,17 +1,22 @@
 <?php 
-	include '../inc/session.php';
- ?>
+
+include '../inc/session.php';
+include '../inc/template_header.php';
+include '../inc/navigation.php';
+include 'regprocess.php';
+
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>upload student result</title>
-	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 </head>
 <body>
 	<div class="container">
 		<form action="upload_process.php" method="post" enctype="multipart/form-data">
-			<h3 class="text-center">upload exam result</h3><hr>
+			<fieldset>
+				<legend>Upload result</legend>
 			<?php 
 			include '../inc/alert.php';
 			?>
@@ -29,8 +34,13 @@
 					</div>
 				</div>
 			</div>
+		</fieldset>
 		</form>
 	</div>
 
 </body>
 </html>
+
+<?php 
+include '../inc/template_footer.php';
+?>

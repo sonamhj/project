@@ -40,7 +40,7 @@
                     <a href="javascript:;" data-toggle="collapse" data-target="#category"><i class="fa fa-fw fa-list"></i> <b>Result Management </b><i class="fa fa-fw fa-arrows-v"></i></a>
                     <ul id="category" class="collapse">
                         <li>
-                            <a href="testing.php">Add result</a>
+                            <a href="upload_result.php">Add result</a>
                         </li>
                         <li>
                             <a href="#">List category</a>

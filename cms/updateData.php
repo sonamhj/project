@@ -43,13 +43,18 @@ $symbolNumber = $_POST['symbol_number'];
 $registrationNumber = $_POST['registration_number'];
 /*echo $symbolNumber; die();*/
 
-$qry = " UPDATE `registration` SET `symbol_num`='$symbolNumber',`registration_num`='$registrationNumber',`student_name`='$studentName',`college_name`='$collegeName',`email`='$email',`batch`='$batch' " ;
+$run = "UPDATE registration SET symbol_num='$symbolNumber',registration_num=$registrationNumber,student_name='$studentName',college_name='$collegeName',email='$email',batch='$batch' WHERE symbol_num='$symbolNumber'";
 $run = mysqli_query($con, $qry);
 if ($run == true) {
+	echo "success";
+}else{
+	echo "error";
+}
+/*if ($run == true) {
 	$_SESSION['success'] = "Data updated successfully";
 	@header('location:updatestudent.php');
 	exit();
-}
+}*/
 ?>
 
 

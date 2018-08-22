@@ -8,11 +8,9 @@ include '../inc/navigation.php';
 <?php 
 
   if (isset($_POST['semester'])) {
-    $studentName = $_POST['symbol_number'];
-    echo $studentName."<br>";
-
-    $collegeName = $_POST['crp_practical'];
-    echo $collegeName;
+    
+    include 'testingprocess.php';
+    
   }
   
  ?>

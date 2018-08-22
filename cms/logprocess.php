@@ -34,8 +34,10 @@
 				header('location:dashboard.php');
 				exit();
 			}else{
-
-				array_push($errors, "wrong username/password combination");
+				session_start();
+				$_SESSION['error'] = "wrong username/password combination";
+				header('location:login.php');
+				exit();
 			}
 		}
 	}

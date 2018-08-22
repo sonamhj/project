@@ -14,6 +14,7 @@
 						<div class="col-sm-12 col-sm-9">
 							<div class="logo">
 								<a href="../index.php"><img src="http://tribhuvan-university.edu.np/wp-content/themes/tu/images/logo.png" alt="logo">
+									<!-- <img src="assets/img/logo.png" alt="logo"> -->
 								</a>
 							</div>
 						</div>

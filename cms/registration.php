@@ -1,4 +1,5 @@
 <?php 
+
 include '../inc/session.php';
 include '../inc/template_header.php';
 include '../inc/navigation.php';
