@@ -32,7 +32,7 @@ include '../inc/navigation.php';
 				</ol>
 				<div class="form-container">
 					<div class="title">
-						<h2>update</h2>
+						<h2>Update</h2>
 					</div>
 					<!--creating form -->
 					<form action="" method="post">
@@ -41,15 +41,15 @@ include '../inc/navigation.php';
 						include '../inc/errors.php';
 						?>
 						<div class="input-group">
-							<label for="symbol_number">symbol number</label>
+							<label for="symbol_number">Symbol number</label>
 							<input type="number" name="sym_num" value="<?php echo($symbol_number); ?>">
 						</div>
 						<div class="input-group">
-							<label for="batch">batch</label>
+							<label for="batch">Batch</label>
 							<input type="number" name="batch" value="<?php echo($batch); ?>">
 						</div>
 						<div class="input-group">
-							<button type="submit" name="search" class="btn">search</button>
+							<button type="submit" name="search" class="btn">Search</button>
 						</div>
 					</form>
 				</div>
@@ -59,12 +59,12 @@ include '../inc/navigation.php';
 						<table class="table" style="margin-top: 20px">
 							<thead>
 								<tr>
-									<th>student name</th>
-									<th>college name</th>
-									<th>registration number</th>
-									<th>symbol number</th>
-									<th>batch</th>
-									<th>update</th>
+									<th>Student name</th>
+									<th>Contact number</th>
+									<th>Registration number</th>
+									<th>Symbol number</th>
+									<th>Batch</th>
+									<th>Update</th>
 								</tr>
 								<tr>
 									<?php 

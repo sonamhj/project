@@ -43,7 +43,7 @@
 					?>
 					<tr>
 						<td><?php echo $data['student_name']; ?></td>
-						<td><?php echo $data['college_name']; ?></td>
+						<td><?php echo $data['contact_num']; ?></td>
 						<td><?php echo $data['registration_num'];?></td>
 						<td><?php echo $data['symbol_num'];?></td>
 						<td><?php echo $data['batch'];?></td>

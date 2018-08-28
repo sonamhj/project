@@ -16,15 +16,11 @@
 		<form action="inprocess.php" method="post" onsubmit="return formValidation()">
 			<?php /*include 'inc/errors.php';*/ ?>
 			<div class="input-group">
-				<label for="registration no">Registration number</label>
-				<input type="text" name="regnum" id="regnum" placeholder="Enter registration number" >
+				<label for="year">Batch</label>
+				<input type="text" name="regnum" id="regnum" placeholder="Enter your year" >
 				<span id="regError" class="text-danger font-weight-bold"></span>
 			</div>
-			<div class="input-group">
-				<label for="symbol no">Symbol number</label>
-				<input type="number" name="symnum" id="symnum" placeholder="Enter symbol number" >
-				<span id="symError" class="text-danger font-weight-bold"></span>
-			</div>
+			
 			<div class="input-group">
 				<label for="semester">Semester</label>
 				<select name="semester" id="semId">
@@ -39,6 +35,11 @@
 					<option value="9">8th sem</option>
 				</select>
 				<span id="semError" class="text-danger font-weight-bold"></span>
+			</div>
+			<div class="input-group">
+				<label for="symbol no">Symbol number</label>
+				<input type="text" name="symnum" id="symnum" placeholder="Enter your roll number" >
+				<span id="symError" class="text-danger font-weight-bold"></span>
 			</div>
 			<div class="input-group">
 				<button type="submit" name="show" class="btn">show</button>
@@ -59,11 +60,11 @@
 					document.getElementById('regError').innerHTML = "";
 					status = true;
 				}else{
-					document.getElementById('regError').innerHTML = "* registration number must be a number";
+					document.getElementById('regError').innerHTML = "* your batch";
 					status = false;
 				}
 			}else{
-				document.getElementById('regError').innerHTML = "* registration number is required";
+				document.getElementById('regError').innerHTML = "* batch is required";
 				status = false;
 			}
 

@@ -30,7 +30,7 @@ include 'regprocess.php';
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
-						<input type="submit" value="Upload" name="uploadBtn" class="btn btn-info">
+						<input type="submit" value="upload" name="uploadBtn" class="btn btn-info">
 					</div>
 				</div>
 			</div>

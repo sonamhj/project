@@ -36,17 +36,18 @@ include '../inc/navigation.php';
 <?php 
 include '../inc/dbcon.php';
 $studentName = $_POST['student_name'];
-$collegeName = $_POST['college_name'];
+$contactNumber = $_POST['contact_number'];
+$address= $_POST['address'];
 $email = $_POST['email'];
 $batch = $_POST['batch'];
 $symbolNumber = $_POST['symbol_number'];
 $registrationNumber = $_POST['registration_number'];
 /*echo $symbolNumber; die();*/
 
-$run = "UPDATE registration SET symbol_num='$symbolNumber',registration_num=$registrationNumber,student_name='$studentName',college_name='$collegeName',email='$email',batch='$batch' WHERE symbol_num='$symbolNumber'";
+$qry = "UPDATE registration SET symbol_num='$symbolNumber', registration_num='$registrationNumber', address='$address', student_name='$studentName', contact_num='$contactNumber', email='$email',batch='$batch' WHERE symbol_num='$symbolNumber'";
 $run = mysqli_query($con, $qry);
 if ($run == true) {
-	echo "success";
+	echo " Records Successfully updated ";
 }else{
 	echo "error";
 }

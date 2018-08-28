@@ -25,13 +25,16 @@
                     <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-user"></i><b> Student Management </b><i class="fa fa-fw fa-arrows-v"></i></a>
                     <ul id="demo" class="collapse">
                         <li>
-                            <a href="registration.php">register student</a>
+                            <a href="registration.php">Register student</a>
                         </li>
                         <li>
-                            <a href="../cms/deletestudent.php">delete student</a>
+                            <a href="bulkregister.php">Register in bulk</a>
                         </li>
                         <li>
-                            <a href="../cms/updateStudent.php">update student</a>
+                            <a href="../cms/deletestudent.php">Delete student</a>
+                        </li>
+                        <li>
+                            <a href="../cms/updateStudent.php">Update student</a>
                         </li>
                     </ul>
                 </li>

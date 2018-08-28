@@ -3,7 +3,8 @@
 //initializing variables
 
 $student_name = "";
-$college_name = "";
+$contact_number = "";
+$address= "";
 $email = "";
 $registration_number = "";
 $symbol_number = "";
@@ -16,10 +17,11 @@ $batch = "";
 	include '../inc/dbcon.php';
 	if (isset($_POST['register'])) {
 		$student_name = mysqli_real_escape_string($con, $_POST['student']);
-		$college_name = mysqli_real_escape_string($con, $_POST['college']);
+		$address=mysqli_real_escape_string($con, $_POST['address']);
 		$email = mysqli_real_escape_string($con, $_POST['email']);
 		$registration_number = mysqli_real_escape_string($con, $_POST['registration']);
 		$symbol_number = mysqli_real_escape_string($con, $_POST['symbol']);
+		$contact_number=mysqli_real_escape_string($con, $_POST['contact']);
 		$batch = mysqli_real_escape_string($con, $_POST['batch']);
 
 		//ensure that the form field are filled properly(form validation)...
@@ -32,14 +34,12 @@ $batch = "";
 			array_push($errors, "student name is required");
 		}
 
-
-		if (!empty($college_name)) {
-			if (!preg_match("/^[a-z A-Z]*$/", $college_name)) {
-				array_push($errors, "invalid college name");
+		if(!empty($address)) {
+			if(!preg_match(" /^[-.?!,;:() A-Za-z0-9]*$/", $address)){
+				array_push($errors, "invalid address");
 			}
-		}else{
-			array_push($errors, "college name is required");
 		}
+
 
 		//check if email is valid...
 		if (!empty($email)) {
@@ -65,6 +65,14 @@ $batch = "";
 			}
 		}else{
 			array_push($errors, "symbol number is required");
+		}
+
+		if (!empty($contact_number)) {
+			if (!preg_match("/^\d{10}$/", $contact_number)) {
+				array_push($errors, "invalid contact number.Should contain 10 digits");
+			}
+		}else{
+			array_push($errors, "contact number is required");
 		}
 
 		if (!empty($batch)) {
@@ -93,7 +101,7 @@ $batch = "";
 		//if there are no errors save to database...
 		if (count($errors) == 0) {
 
-			$sql = "INSERT INTO registration(student_name, college_name, email, registration_num, symbol_num, batch) VALUES ('$student_name','$college_name','$email','$registration_number','$symbol_number','$batch')";
+			$sql = "INSERT INTO registration(student_name , address, email, registration_num, symbol_num,contact_num, batch) VALUES ('$student_name','$address','$email','$registration_number','$symbol_number','$contact_number','$batch')";
 			$run = mysqli_query($con, $sql);
 			if ($run == 'true') {
 				
