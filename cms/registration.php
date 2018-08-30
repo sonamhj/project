@@ -5,6 +5,7 @@ include '../inc/template_header.php';
 include '../inc/navigation.php';
 include 'regprocess.php';
 
+
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ include 'regprocess.php';
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
-
+	
 	<div class="container-fluid"> 
 		<!-- Page Heading -->
 		<div class="row">

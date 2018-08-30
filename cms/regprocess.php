@@ -1,5 +1,4 @@
 <?php 
-
 //initializing variables
 
 $student_name = "";
@@ -105,7 +104,8 @@ $batch = "";
 			$run = mysqli_query($con, $sql);
 			if ($run == 'true') {
 				
-				$_SESSION['success'] = "student registered successfully.";			
+				$_SESSION['success'] = "student registered successfully.";	
+				 //header('location:student_detail.php');		
 			}
 			
 		}

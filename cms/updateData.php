@@ -1,10 +1,10 @@
 
 <?php 
-ob_start();
+
 include '../inc/session.php';
 include '../inc/template_header.php';
 include '../inc/navigation.php';
-
+//include 'student_detail.php';
 ?>
 <div id="page-wrapper">
 	<div class="container-fluid">
@@ -48,9 +48,11 @@ $qry = "UPDATE registration SET symbol_num='$symbolNumber', registration_num='$r
 $run = mysqli_query($con, $qry);
 if ($run == true) {
 	echo " Records Successfully updated ";
+	 //header('location:student_detail.php');
 }else{
 	echo "error";
 }
+
 /*if ($run == true) {
 	$_SESSION['success'] = "Data updated successfully";
 	@header('location:updatestudent.php');
@@ -62,7 +64,7 @@ if ($run == true) {
 <?php
 
 include '../inc/template_footer.php';
-ob_flush();
+
 ?>
 
 
