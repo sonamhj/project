@@ -15,9 +15,9 @@ include '../inc/dbcon.php';
 					array_push($errors, "invalid batch number");
 				}
 			}
-			//else{
-			//	array_push($errors, "batch is required here");
-			//}
+			else{
+				array_push($errors, "batch is required here");
+			}
 			//if there are no errors save to database...
 	if (count($errors) == 0) {
 			include '../inc/dbcon.php';
@@ -28,8 +28,8 @@ include '../inc/dbcon.php';
 			
 			echo 'success';
 			}
-			//else
-				//echo 'error';
+			else
+				echo 'error';
 		
 		}
 
