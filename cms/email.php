@@ -100,5 +100,6 @@ try {
         /*--------------------- for sending mail close ------------------*/
 
 }
+include '../inc/template_footer.php';
 
 ?>
