@@ -46,6 +46,7 @@ try {
                 //echo $row['name'];
                 $email = $row['email'];
                 echo $row['email'];
+                echo '<br><br>';
                 //$batch = $row['batch'];
                 //call send email function
                 //sendEmail($email, $name, $batch);
