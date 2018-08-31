@@ -18,7 +18,7 @@ $htmlVersion="<h1>Hello  , <br><br><p>This is the html Version</p><br><br><h3>Ho
 $textVersion="Hello ,./r/n This is the text version";                              // Passing `true` enables exceptions
 try {
     //Server settings
-    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+    $mail->SMTPDebug = 1;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -40,19 +40,23 @@ try {
                 die ('SQL Error: ' . mysqli_error($conn));
             }
             $email =array();
-            $row = array();     
+            //$arrlength = count($email);
+            //$row = array();     
             while($row = mysqli_fetch_array($run)) {
                 //$id = $row['id'];
                 //$name = $row['name'];
                 //echo $row['name'];
-                $email[i] = $row['email'];
+                $email = $row['email'];
                 echo $row['email'];
                 echo '<br><br>';
+                //echo $arrlength;
+                $mail->addAddress($email);     // Add a recipient
+
                 //$batch = $row['batch'];
                 //call send email function
                 //sendEmail($email, $name, $batch);
             }  
-            echo count($email[i]);
+            
 
 
 
@@ -68,7 +72,6 @@ try {
 
 
 
-    //$mail->addAddress($email);     // Add a recipient
     //$mail->addAddress('sthasrizaana99@hotmail.com');               // Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
   /*  $recipients = array(
@@ -82,10 +85,13 @@ try {
         # code...
     }
     */
-    while($email!= 0)
-    {
-    $mail->addCC($email);
+  /* for($x = 0; $x < $arrlength; $x++) {
+    $mail->addCC($email[$x]);
+    echo "<br>";
     }
+    
+    */
+    
     //$mail->addBCC('bcc@example.com');   
 
     //Attachments
