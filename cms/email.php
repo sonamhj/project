@@ -9,9 +9,9 @@ use PHPMailer\PHPMailer\Exception;
 require 'C:\xampp\composer\vendor\autoload.php';
 //include 'C:\xampp\php\PEAR';
 
-include '../inc/session.php';
-include '../inc/template_header.php';
-include '../inc/navigation.php';
+//include '../inc/session.php';
+//include '../inc/template_header.php';
+//include '../inc/navigation.php';
 
 $mail = new PHPMailer(true);
 $htmlVersion="<h1>Hello  , <br><br><p>This is the html Version</p><br><br><h3>Hope it works!!!</h3> ";
@@ -31,8 +31,34 @@ try {
     $mail->setFrom('sthasushree@gmail.com', 'Mailer Shreejana');
 
     include '../inc/dbcon.php';
+
+    //initializing variables
+$ebatch = "";
+
+    $errors = array(); //creating $errors as an array variable.
+
+include '../inc/dbcon.php';
+    if (isset($_POST['entbatch'])) {
+        $ebatch = mysqli_real_escape_string($con, $_POST['batch']);
+        //echo 'success';
+        //ensure that the form field are filled properly(form validation)...
+    if (!empty($ebatch)) {
+            if (!preg_match("/^[0-9]{4}$/", $ebatch)) {
+                    array_push($errors, "invalid batch number");
+                }
+            }
+            else{
+                array_push($errors, "batch is required here");
+            }
+
+
+
+
+
+if (count($errors) == 0){
+
 /*** prepare the select statement ***/
-             $stmt = "SELECT email FROM registration";
+             $stmt = "SELECT email FROM registration WHERE batch= '$ebatch' ";
      
             /*** execute the prepared statement ***/
             $run = mysqli_query($con,$stmt);
@@ -55,22 +81,17 @@ try {
                 //$batch = $row['batch'];
                 //call send email function
                 //sendEmail($email, $name, $batch);
-            }  
+            }
+
+           
+        
+        //session_start();
+        //$_SESSION['success'] = "student record deleted successfully";
+        
+   
             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
+    
 
     //$mail->addAddress('sthasrizaana99@hotmail.com');               // Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
@@ -107,11 +128,16 @@ try {
 
     $mail->send();
     echo 'Message has been sent';
-} catch (Exception $e) {
+        //$_SESSION['success'] = "student registered successfully.";          
+
+        @header('location:send_mail.php');
+        exit();
+} 
+}catch (Exception $e) {
     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
         /*--------------------- for sending mail close ------------------*/
 
 }
-include '../inc/template_footer.php';
+//include '../inc/template_footer.php';
 
 ?>
