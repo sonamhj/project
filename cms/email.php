@@ -39,18 +39,20 @@ try {
             if (!$run) {
                 die ('SQL Error: ' . mysqli_error($conn));
             }
-            $email =array();     
+            $email =array();
+            $row = array();     
             while($row = mysqli_fetch_array($run)) {
                 //$id = $row['id'];
                 //$name = $row['name'];
                 //echo $row['name'];
-                $email = $row['email'];
+                $email[i] = $row['email'];
                 echo $row['email'];
                 echo '<br><br>';
                 //$batch = $row['batch'];
                 //call send email function
                 //sendEmail($email, $name, $batch);
             }  
+            echo count($email[i]);
 
 
 
@@ -67,7 +69,7 @@ try {
 
 
     //$mail->addAddress($email);     // Add a recipient
-    //$mail->addAddress('ellen@example.com');               // Name is optional
+    //$mail->addAddress('sthasrizaana99@hotmail.com');               // Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
   /*  $recipients = array(
         'sthasunita987@gmail.com' => 'Person One' ,
@@ -80,7 +82,10 @@ try {
         # code...
     }
     */
+    while($email!= 0)
+    {
     $mail->addCC($email);
+    }
     //$mail->addBCC('bcc@example.com');   
 
     //Attachments
