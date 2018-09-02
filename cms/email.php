@@ -14,8 +14,8 @@ require 'C:\xampp\composer\vendor\autoload.php';
 //include '../inc/navigation.php';
 
 $mail = new PHPMailer(true);
-$htmlVersion="<h1>Hello  , <br><br><p>This is the html Version</p><br><br><h3>Hope it works!!!</h3> ";
-$textVersion="Hello ,./r/n This is the text version";                              // Passing `true` enables exceptions
+$htmlVersion="<h1>Hello dear students!!! <br><br><p>Your awaited result has been published. You can view your result from following link</p><br><br><a href =""></a><h3>Fingeres crossed!!!</h3> ";
+$textVersion="Hello dear students!!! ./r/n Your awaited result has been published. You can view your result from following link ./r/n Fingeres crossed!!!" ;                              // Passing `true` enables exceptions
 try {
     //Server settings
     $mail->SMTPDebug = 1;                                 // Enable verbose debug output
@@ -121,14 +121,14 @@ if (count($errors) == 0){
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Mail sending bulk Testing to all stored in database.';
+    $mail->Subject = 'TU BSC CSIT' $ebatch  'result has been published';
     $mail->Body    = $htmlVersion ;
     $mail->AltBody = $textVersion;
 
 
     $mail->send();
     echo 'Message has been sent';
-        //$_SESSION['success'] = "student registered successfully.";          
+        //$_SESSION['success'] = "student emailed successfully.";          
 
         @header('location:send_mail.php');
         exit();
