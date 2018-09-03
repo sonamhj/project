@@ -14,7 +14,7 @@ require 'C:\xampp\composer\vendor\autoload.php';
 //include '../inc/navigation.php';
 
 $mail = new PHPMailer(true);
-$htmlVersion="<h1>Hello dear students!!! <br><br><p>Your awaited result has been published. You can view your result from following link</p><br><br><a href =""></a><h3>Fingeres crossed!!!</h3> ";
+$htmlVersion="<h1>Hello dear students!!! <br><br><p>Your awaited result has been published. You can view your result from following link</p><br><br><h3>Fingeres crossed!!!</h3> ";
 $textVersion="Hello dear students!!! ./r/n Your awaited result has been published. You can view your result from following link ./r/n Fingeres crossed!!!" ;                              // Passing `true` enables exceptions
 try {
     //Server settings
@@ -121,7 +121,7 @@ if (count($errors) == 0){
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'TU BSC CSIT' $ebatch  'result has been published';
+    $mail->Subject = 'TU BSC CSIT result has been published';
     $mail->Body    = $htmlVersion ;
     $mail->AltBody = $textVersion;
 

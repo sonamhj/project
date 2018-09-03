@@ -27,9 +27,9 @@
 			</thead>
 			<tbody>     
 				<tr>
-					<th>computer networks</th>
-					<th>20</th><th>60</th><th>20</th>
-					<th>08</th><th>24</th><th>08</th>
+					<th>Theory of Computation</th>
+					<th>20</th><th>80</th><th>-</th>
+					<th>08</th><th>32</th><th>-</th>
 					<?php
 					$result = "";
 					if ($cn_marks[0] < 8) {
@@ -65,7 +65,7 @@
 					?>
 				</tr>
 				<tr>
-					<th>simulation and modeling</th>
+					<th>System Analysis and Design</th>
 					<th>20</th><th>60</th><th>20</th>
 					<th>08</th><th>24</th><th>08</th>
 					<?php
@@ -102,7 +102,7 @@
 					?>
 				</tr>
 				<tr>
-					<th>design and analysis of algorithm</th>
+					<th>Database Management System</th>
 					<th>20</th><th>80</th><th>-</th>
 					<th>08</th><th>32</th><th>08</th>
 					<?php
@@ -141,8 +141,8 @@
 					?>
 				</tr>
 				<tr>
-					<th>artificial and intelligence</th>
-					<th>20</th><th>80</th><th>-</th>
+					<th>Computer Graphics</th>
+					<th>20</th><th>60</th><th>20</th>
 					<th>08</th><th>32</th><th>08</th>
 					<?php
 					if ($ai_marks[0] < 8) {
@@ -179,87 +179,90 @@
 					}
 					?>
 				</tr>
+
 				<tr>
-					<th colspan="10"><center>ELECTIVE AND EXTRA ELECTIVE</center></th>
-				</tr>
-				<tr>
-					<th>E-governance</th>
+					<th>Introduction of Cognitive Science</th>
 					<th>20</th><th>60</th><th>20</th>
-					<th>08</th><th>24</th><th>08</th>
+					<th>08</th><th>32</th><th>08</th>
 					<?php
-					if ($egov_marks[0] < 8) {
+					if ($ai_marks[0] < 8) {
 						?>
-						<th><?php print_r($egov_marks[0]); ?><span style="color: red">&nbsp;*</span></th>
+						<th><?php print_r($ai_marks[0]); ?><span style="color: red">&nbsp;*</span></th>
 						<?php $result = "fail"; ?>
 						<?php
 					}else{
 						?>
-						<th><?php print_r($egov_marks[0]); ?></th>
+						<th><?php print_r($ai_marks[0]); ?></th>
 						<?php
 					}
 
-					if ($egov_marks[1] < 24) {
+					if ($ai_marks[1] < 32) {
 						?>
-						<th><?php print_r($egov_marks[1]); ?><span style="color: red">&nbsp;*</span></th>
+						<th><?php print_r($ai_marks[1]); ?><span style="color: red">&nbsp;*</span></th>
 						<?php $result = "fail"; ?>
 						<?php
 					}else{
 						?>
-						<th><?php print_r($egov_marks[1]); ?></th>
+						<th><?php print_r($ai_marks[1]); ?></th>
 						<?php
 					}
 
-					if ($egov_marks[2] < 8) {
+					if ($ai_marks[2] < 8) {
 						?>
-						<th><?php print_r($egov_marks[2]); ?><span style="color: red">&nbsp;*</span></th>
+						<th><?php print_r($ai_marks[2]); ?><span style="color: red">&nbsp;*</span></th>
 						<?php $result = "fail"; ?>
 						<?php
 					}else{
 						?>
-						<th><?php print_r($egov_marks[2]); ?></th>
+						<th><?php print_r($ai_marks[2]); ?></th>
 						<?php
 					}
 					?>
 				</tr>
+
 				<tr>
-					<th>wireless networking</th>
-					<th>20</th><th>60</th><th>20</th>
-					<th>08</th><th>24</th><th>08</th>
+					<th>Technical Writing</th>
+					<th>20</th><th>80</th><th>-</th>
+					<th>08</th><th>32</th><th>08</th>
 					<?php
-					if ($wn_marks[0] < 8) {
+					if ($daa_marks[0] < 8) {
 						?>
-						<th><?php print_r($wn_marks[0]); ?><span style="color: red">&nbsp;*</span></th>
+						<th><?php print_r($daa_marks[0]); ?><span style="color: red">&nbsp;*</span></th>
 						<?php $result = "fail"; ?>
 						<?php
 					}else{
 						?>
-						<th><?php print_r($wn_marks[0]); ?></th>
+						<th><?php print_r($daa_marks[0]); ?></th>
 						<?php
 					}
 
-					if ($wn_marks[1] < 24) {
+					if ($daa_marks[1] < 32) {
 						?>
-						<th><?php print_r($wn_marks[1]); ?><span style="color: red">&nbsp;*</span></th>
+						<th><?php print_r($daa_marks[1]); ?><span style="color: red">&nbsp;*</span></th>
 						<?php $result = "fail"; ?>
 						<?php
 					}else{
 						?>
-						<th><?php print_r($wn_marks[1]); ?></th>
+						<th><?php print_r($daa_marks[1]); ?></th>
 						<?php
 					}
 
-					if ($wn_marks[2] < 8) {
+					if ($daa_marks[2] < 8) {
 						?>
-						<th><?php print_r($wn_marks[2]); ?><span style="color: red">&nbsp;*</span></th>
+						<th><?php print_r($daa_marks[2]); ?><span style="color: red">&nbsp;*</span></th>
 						<?php $result = "fail"; ?>
 						<?php
 					}else{
 						?>
-						<th><?php print_r($wn_marks[2]); ?></th>
+						<th><?php print_r($daa_marks[2]); ?></th>
 						<?php
 					}
 					?>
 				</tr>
+				
+				
+
+				
 				<tr>
 					<td><strong>TOTAL</strong></td>
 					<th>120</th>

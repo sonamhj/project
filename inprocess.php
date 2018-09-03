@@ -42,7 +42,7 @@ if (isset($_POST['show'])) {
 		$egov_marks = explode(',', $data['egov']);
 		$wn_marks = explode(',', $data['wireless_networking']);
 
-		include 'result/ResultViewTable.php';
+		include 'resultTable5.php';
 		
 	}
 }
