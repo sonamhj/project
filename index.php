@@ -26,11 +26,7 @@
 			</div>
 			<div class="input-group">
 				<label for="symbol no">Symbol number</label>
-<<<<<<< HEAD
 				<input type="number" name="symnum" id="symnum" placeholder="enter symbol number" >
-=======
-				<input type="text" name="symnum" id="symnum" placeholder="Enter your symbol number" >
->>>>>>> e1f287ea62f835d08e9769d8eb695b2da60699c4
 				<span id="symError" class="text-danger font-weight-bold"></span>
 			</div>
 			<div class="input-group">
