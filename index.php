@@ -38,7 +38,7 @@
 			</div>
 			<div class="input-group">
 				<label for="symbol no">Symbol number</label>
-				<input type="text" name="symnum" id="symnum" placeholder="Enter your roll number" >
+				<input type="text" name="symnum" id="symnum" placeholder="Enter your symbol number" >
 				<span id="symError" class="text-danger font-weight-bold"></span>
 			</div>
 			<div class="input-group">

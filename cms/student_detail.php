@@ -1,6 +1,8 @@
 <?php
 
 include '../inc/session.php';
+include '../inc/dbcon.php';
+
 include '../inc/template_header.php';
 include '../inc/navigation.php';
 
@@ -18,6 +20,11 @@ $title = "student";
                         <h4 class="title text-capitalize">
                             List of <?= $page_title ?>
                             <a href="registration.php" class="btn btn-primary text-uppercase">add student</a>
+
+<?php 
+            include '../inc/alert.php';
+            ?>
+
                         </h4>
                         <hr>
                     </div>
@@ -29,6 +36,7 @@ $title = "student";
 
                                 <th>Name</th>
                                 <th>Contact</th>
+                                <th>Email</th>
                                 <th>Address</th>
                                 <th>Batch</th>
                                 <th>Regd number</th>
@@ -38,24 +46,47 @@ $title = "student";
                             </thead>
                             <tbody>
                                 <?php
-                                include '../inc/dbcon.php';
                                 $qry = " SELECT * FROM registration ";
                                 $run = mysqli_query($con, $qry);
 
                                 while ($data = mysqli_fetch_assoc($run)) {
                                 ?>
                                 <tr>
-                                    <td><?php echo $data['student_name']; ?></td>
+                                    <td class="text-capitalize"><?php echo $data['student_name']; ?></td>
                                     <td><?php echo $data['contact_num']; ?></td>
-                                    <td><?php echo $data['address']; ?></td>
+                                    <td><?php echo $data['email'];?></td>
+                                    <td class="text-capitalize"><?php echo $data['address']; ?></td>
                                     <td><?php echo $data['batch'];?></td>
                                     <td><?php echo $data['registration_num'];?></td>
                                     <td><?php echo $data['symbol_num'];?></td>
                                     <td>
-                                        <a href="update.php?symnum=<?php echo $data['symbol_num']; ?>"class="font-icon"><i
+                                        <a href="update.php?symnum=<?php echo $data['symbol_num']; ?>"class="font-icon "><i
                                                     class="fa fa-edit"></i></a>
-                                       <a href="deletion.php?symnum=<?php echo $data['symbol_num']; ?> "class="font-icon color-green"><i
-                                                    class="fa fa-remove"></i></a>
+                                        <a href=""><i class="fa fa-remove" data-toggle="modal" data-target='#delete' ></i></a>
+                                                    <div id="delete" class="modal fate" role="dialog">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                    <h4 class="modal-title">Are you sure?</h4>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                    <button type=button class="btb btn-warning" onClick="delete()">delete</button>
+                                                                 </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>  
+
+                                     <script type="text/javascript">
+                                            function delete(){
+                                                if(confirm("Are you sure?")){
+                                                    window.location.href="deletion.php?symnum=";
+                                                    return true;
+                                                }
+                                            }
+                                        </script>
+                                       
                                     </td>
 
 

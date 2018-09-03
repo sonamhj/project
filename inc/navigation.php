@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
         
-            <a class=" navbar-brand logo" href="dashboard.php"><img src="http://tribhuvan-university.edu.np/wp-content/themes/tu/images/logo.png" alt="logo">
+            <a class=" navbar-brand logo" href="dashboard.php"><img src="../img/logo.png" width="300" height="85" alt="logo">
             </a>
         </div>
 
@@ -17,7 +17,7 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="logout.php" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-user"></i>
                             <p class="text-capitalize">my account</p>
                             <b class="caret"></b>
@@ -37,8 +37,8 @@
             <ul class="nav navbar-nav side-nav">
 
                 <li>
-                    <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-user"></i><b> Student Management </b><i class="fa fa-fw fa-arrows-v"></i></a>
-                    <ul id="demo" class="collapse">
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-user"></i><b> Student Management </b><i class="fa fa-fw fa-arrows-v"></i></a>
+                    <ul id="demo1" class="collapse">
                         <li>
                             <a href="student_detail.php">Student detail</a>
                         </li>
@@ -49,7 +49,7 @@
                 </li>
 
                 <li>
-                    <a href="javascript:;" data-toggle="collapse" data-target="#category"><i class="fa fa-fw fa-list"></i> <b>Notification mgmt </b><i class="fa fa-fw fa-arrows-v"></i></a>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#category"><i class="fa fa-envelope"></i> <b>  Notification Mgmt </b><i class="fa fa-fw fa-arrows-v"></i></a>
                     <ul id="category" class="collapse">
                         <li>
                             <a href="sendmail.php">Send Mail</a>
@@ -61,8 +61,8 @@
                 </li>
 
                 <li>
-                    <a href="javascript:;" data-toggle="collapse" data-target="#category"><i class="fa fa-fw fa-list"></i> <b>Result Management </b><i class="fa fa-fw fa-arrows-v"></i></a>
-                    <ul id="category" class="collapse">
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-list"></i> <b> Result Management </b><i class="fa fa-fw fa-arrows-v"></i></a>
+                    <ul id="demo2" class="collapse">
                         <li>
                             <a href="upload_result.php">Add result</a>
                         </li>

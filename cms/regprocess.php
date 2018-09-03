@@ -1,6 +1,8 @@
 <?php 
 //initializing variables
 
+	include '../inc/dbcon.php';
+	
 $student_name = "";
 $contact_number = "";
 $address= "";
@@ -13,7 +15,6 @@ $batch = "";
 
 	//if the register button is clicked...
 
-	include '../inc/dbcon.php';
 	if (isset($_POST['register'])) {
 		$student_name = mysqli_real_escape_string($con, $_POST['student']);
 		$address=mysqli_real_escape_string($con, $_POST['address']);
@@ -100,12 +101,14 @@ $batch = "";
 		//if there are no errors save to database...
 		if (count($errors) == 0) {
 
-			$sql = "INSERT INTO registration(student_name , address, email, registration_num, symbol_num,contact_num, batch) VALUES ('$student_name','$address','$email','$registration_number','$symbol_number','$contact_number','$batch')";
+			$sql = "INSERT INTO registration (student_name , address, email, registration_num, symbol_num,contact_num, batch) VALUES ('$student_name','$address','$email','$registration_number','$symbol_number','$contact_number','$batch')";
 			$run = mysqli_query($con, $sql);
-			if ($run == 'true') {
+			if ($run) {
 				
-				$_SESSION['success'] = "student registered successfully.";	
+				$_SESSION['success']= "student registered successfully.";	
 				 //header('location:student_detail.php');		
+			}else{
+				$_SESSION['error']='Register fail.Check the fields.';
 			}
 			
 		}

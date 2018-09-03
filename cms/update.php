@@ -1,7 +1,10 @@
 <?php 
+include '../inc/dbcon.php';
 include '../inc/session.php';
 include '../inc/template_header.php';
 include '../inc/navigation.php';
+
+
 ?>
 
 <div id="page-wrapper">
@@ -32,7 +35,7 @@ include '../inc/navigation.php';
 </div>
 <?php 
 
-include '../inc/dbcon.php';
+
 $symbol_number = $_REQUEST['symnum'];
 $qry = "SELECT * FROM registration WHERE symbol_num = '$symbol_number'";
 $run = mysqli_query($con, $qry);
@@ -47,13 +50,13 @@ $data = mysqli_fetch_assoc($run);
 		<div class="form-group">
 			<label for="student_name" class="control-label col-sm-3">Student name:</label>
 			<div class="col-sm-7">
-				<input type="text" class="form-control" name="student_name" value="<?php echo $data['student_name']; ?>">
+				<input type="text" class="form-control" name="student_name" value="<?= $data['student_name']; ?>">
 			</div>
 		</div>
 		<div class="form-group">
             <label for="college_name" class="control-label col-sm-3">Contact number</label>
             <div class="col-sm-7">
-                <input type="text" class="form-control" name="contact_number" value="<?php echo $data['contact_num']; ?>">
+                <input type="text" maxlength="10" class="form-control" name="contact_number" value="<?= $data['contact_num']; ?>">
             </div>
         </div>
         <div class="form-group">
@@ -74,22 +77,11 @@ $data = mysqli_fetch_assoc($run);
                 <input type="text" class="form-control" name="batch" value="<?php echo $data['batch']; ?>">
             </div>
         </div>
-        <div class="form-group">
-            <label for="symbol_number" class="control-label col-sm-3">Symbol number:</label>
-            <div class="col-sm-7">
-                <input type="text" class="form-control" name="symbol_number" value="<?php echo $data['symbol_num']; ?>">
-            </div>
-        </div>
-        <div class="form-group">
-         <label for="registration_number" class="control-label col-sm-3">Registration number:</label>
-         <div class="col-sm-7">
-            <input type="text" class="form-control" name="registration_number" value="<?php echo $data['registration_num']; ?>">
-        </div>
-    </div>
+        
     <div class="form-group"> 
        <div class="col-sm-offset-2 col-sm-10">
          <button type="submit" class="btn btn-primary" >Update</button>
-         <input type="hidden" name="symNum" value="<?php $data['symbol_num'] ?>">
+         <input type="hidden" name="symNum" value="<?= $data['symbol_num'] ?>">
        </div>
      </div>
  </fieldset>
