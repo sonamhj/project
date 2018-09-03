@@ -27,7 +27,7 @@
             </div>
         </div>
         <div>
-            <h3 >Welcome to the dashboard</h3>
+            <h1 >Welcome to the dashboard</h1>
         </div>
         <!-- /.row -->
     </div>

@@ -15,6 +15,21 @@ SET time_zone = "+00:00";
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTIO-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 02, 2018 at 04:55 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 7.0.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
@@ -48,6 +63,7 @@ INSERT INTO `login` (`id`, `username`, `password`) VALUES
 -- Table structure for table `registrations`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `registrations` (
   `id` int(11) NOT NULL,
   `student_name` varchar(150) NOT NULL,
@@ -93,6 +109,23 @@ CREATE TABLE `results` (
 INSERT INTO `results` (`id`, `student_name`, `college_name`, `symbol_number`, `reg_number`, `computer_network`, `simulation_and_modeling`, `DAA`, `AI`, `egov`, `wireless_networking`) VALUES
 (1, 'sandeep karki', 'sagarmatha college of science and technology', 5303, '5-2-1180-21-2014', '34,12,23', '34,24,18', '12,32,18', '12,24,18', '12,32,18', '12,24,18'),
 (2, 'saroj khadka', 'sagarmatha college of science and technology', 5304, '5-2-1180-20-2014', '34,25,23', '34,27,18', '12,32,18', '12,33,18', '12,32,18', '12,24,18');
+=======
+CREATE TABLE `registration` (
+  `id` int(11) NOT NULL,
+  `symbol_num` int(11) NOT NULL,
+  `registration_num` int(11) DEFAULT NULL,
+  `student_name` varchar(100) DEFAULT NULL,
+  `address` varchar(50) NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `contact_num` bigint(20) NOT NULL,
+  `batch` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `registration`
+--
+
+>>>>>>> e1f287ea62f835d08e9769d8eb695b2da60699c4
 
 --
 -- Indexes for dumped tables
@@ -105,6 +138,7 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
+<<<<<<< HEAD
 -- Indexes for table `registrations`
 --
 ALTER TABLE `registrations`
@@ -116,6 +150,14 @@ ALTER TABLE `registrations`
 ALTER TABLE `results`
   ADD PRIMARY KEY (`id`);
 
+=======
+-- Indexes for table `registration`
+--
+ALTER TABLE `registration`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `contact_num` (`contact_num`),
+  ADD UNIQUE KEY `email` (`email`);
+>>>>>>> e1f287ea62f835d08e9769d8eb695b2da60699c4
 --
 -- AUTO_INCREMENT for dumped tables
 --
@@ -125,6 +167,7 @@ ALTER TABLE `results`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+<<<<<<< HEAD
 
 --
 -- AUTO_INCREMENT for table `registrations`
@@ -139,6 +182,17 @@ ALTER TABLE `results`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
+=======
+--
+-- AUTO_INCREMENT for table `registration`
+--
+ALTER TABLE `registration`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+>>>>>>> e1f287ea62f835d08e9769d8eb695b2da60699c4
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+--
