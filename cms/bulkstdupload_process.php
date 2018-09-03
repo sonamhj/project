@@ -74,6 +74,7 @@
 						if (!$run) {
 
 							die("error in uploaing file".mysqli_error($con));
+							header('location:bulkregister.php');
 						}else{
 							
 							$_SESSION['success'] = "file uploaded successfully";

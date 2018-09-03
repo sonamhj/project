@@ -60,33 +60,9 @@ $title = "student";
                                     <td><?php echo $data['registration_num'];?></td>
                                     <td><?php echo $data['symbol_num'];?></td>
                                     <td>
-                                        <a href="update.php?symnum=<?php echo $data['symbol_num']; ?>"class="font-icon "><i
-                                                    class="fa fa-edit"></i></a>
-                                        <a href=""><i class="fa fa-remove" data-toggle="modal" data-target='#delete' ></i></a>
-                                                    <div id="delete" class="modal fate" role="dialog">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                    <h4 class="modal-title">Are you sure?</h4>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                    <button type=button class="btb btn-warning" onClick="delete()">delete</button>
-                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>  
-
-                                     <script type="text/javascript">
-                                            function delete(){
-                                                if(confirm("Are you sure?")){
-                                                    window.location.href="deletion.php?symnum=";
-                                                    return true;
-                                                }
-                                            }
-                                        </script>
-                                       
+                                        <a href="update.php?symnum=<?php echo $data['symbol_num']; ?>><button  type="button"
+                                                    class="btn btn-default" > Edit</button></a>
+                                        <a href="deletion.php?symnum=<?php echo $data['symbol_num'];?><button type="button" class="btn btn-warning" >Delete</button>
                                     </td>
 
 
